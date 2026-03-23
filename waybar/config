@@ -1,0 +1,92 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["custom/temp-cpu", "custom/temp-gpu",
+    "battery",
+    "custom/date",
+        "clock",],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [
+ "mpris",
+    "pulseaudio",
+    "backlight",
+    "tray",
+    "custom/powermenu"
+  ],
+
+  "hyprland/workspaces": {
+    "on-click": "activate"
+  },
+
+
+"backlight": {
+ "format": "{percent}%  ",
+  "device": "",
+  "on-click": "brightnessctl set 50%",
+  "on-scroll-up": "brightnessctl set +5%",
+  "on-scroll-down": "brightnessctl set 5%-",
+  "scroll-step": 5
+},
+
+"custom/temp-cpu": {
+  "exec": "/home/friedrich/.config/waybar/temp-cpu.sh",
+  "interval": 5,
+  "return-type": "json",
+  "format": "{text}",
+ "format-icons": ["", "", "", "", "", "", "", "", ""]
+},
+
+"custom/temp-gpu": {
+  "exec": "/home/friedrich/.config/waybar/temp-gpu.sh",
+  "interval": 5,
+  "return-type": "json",
+  "format": "{text}"
+},
+"mpris": {
+    "format-playing": "⏸ {artist} – {title}",
+    "format-paused": "▶ {artist} – {title}",
+    "tooltip": false,
+    "interval": 0,
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl previous",
+    "on-scroll-down": "playerctl next"
+  },
+ "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+  "clock": {
+  "format": " {:%H:%M}",
+  "tooltip-format": " {:%H:%M}", // or remove this line completely
+  "interval": 60
+},
+
+"pulseaudio": {
+  "format": "{volume}% ",  // Speaker icon, shows volume %
+  "format-muted": " Muted",
+  "on-click": "pavucontrol",
+  "scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+  "scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+  "scroll-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+},
+  "custom/date": {
+    "format": " {}",
+"exec": "date '+%d.%m.%Y'",
+"interval": 3600
+  },
+
+  "custom/powermenu": {
+    "format": "⏻",
+    "on-click": "bash -c 'pkill wlogout || wlogout &'",
+    "tooltip": false
+  }
+}

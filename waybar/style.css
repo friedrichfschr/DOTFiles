@@ -1,0 +1,81 @@
+* {
+ font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", monospace;
+  font-size: 13px;
+  border: none;
+  border-radius: 0;
+  padding: 0 10px;
+}
+
+window#waybar {
+  background:rgba(0, 0, 0, 0);
+  color: #cdd6f4;
+}
+
+#workspaces button {
+  padding: 0 3px;
+  color: #89b4fa;
+}
+#workspaces button.active {
+  background: #313244;
+  border-bottom: 2px solid #89b4fa;
+}
+
+#temperature {
+  color: #fab387;
+}
+
+#battery {
+  color: #a6e3a1;
+}
+
+#clock {
+  color: #89b4fa;
+}
+
+#custom-date {
+  color: #f9e2af;
+}
+
+#custom-powermenu {
+  color: #f38ba8;
+  font-size: 14px;
+}
+#mpris {
+color: #cba6f7; /* lavender */
+padding: 0 10px;
+font-weight: 500;
+}
+
+#mpris:hover {
+background: #313244;
+border-radius: 4px;
+}
+
+#custom-temp-cpu.normal { color: #a6e3a1; }
+#custom-temp-cpu.warning { color: #f9e2af; }
+#custom-temp-cpu.critical { color: #f38ba8; }
+
+#custom-temp-gpu.normal { color: #8bd5ca; }
+#custom-temp-gpu.warning { color: #f9e2af; }
+#custom-temp-gpu.critical { color: #f38ba8; }
+
+#custom-temp-cpu, #custom-temp-gpu {
+padding: 0 8px;
+font-weight: 600;
+}
+#backlight {
+color: #ffcd66;
+padding: 0 10px;
+}
+
+#backlight-slider {
+background: #45475a;
+}
+
+#backlight-slider trough {
+background: #313244;
+}
+
+#backlight-slider highlight {
+background: #ffcd66;
+}
